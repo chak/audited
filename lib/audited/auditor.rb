@@ -173,7 +173,7 @@ module Audited
       end
 
       def audit_workflow_state_change(triggering_event, from, to)
-        write_audit(:action => triggering_event.to_s, :audited_changes => {self.class.workflow_column => [from, to]},
+        write_audit(:action => triggering_event.to_s, :audited_changes => {self.class.workflow_column => [from.name, to.name]},
                     :comment => audit_comment)
       end
 
